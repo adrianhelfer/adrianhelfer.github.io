@@ -1,10 +1,99 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adrian Helfer</title>
+    <style>
+
+        :root {
+            --color-background: #f9f5f3;
+            --color-text: #5c6f87;
+            --color-light-accent: #e3ded8;
+        }
+
+        body {
+            background-color: var(--color-background);
+            font-family: Georgia, "Times New Roman", serif;
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+            padding: 40px 30px;
+            background-color: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        h1 {
+            font-size: 2.8em;
+            line-height: 1.1;
+            margin-bottom: 10px;
+            color: var(--color-text);
+            font-weight: 400;
+            letter-spacing: 2px;
+        }
+
+        .contact-info p {
+            font-size: 1.1em;
+            color: var(--color-text);
+            margin: 8px 0;
+            line-height: 1.4;
+        }
+        
+        .contact-info p:nth-child(1) {
+            font-weight: 500;
+            padding-top: 15px;
+            border-top: 1px solid var(--color-light-accent);
+            display: inline-block;
+        }
+
+        .contact-info p:nth-child(2) {
+            font-size: 1em;
+            margin-top: 5px;
+        }
+
+        .contact-info p:nth-child(3) {
+            font-size: 1em;
+            margin-top: 5px;
+            color: #888;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+            .contact-info p {
+                font-size: 1em;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>info@adrianhelfer.com</h1>
+
+    <div class="container">
+        
+        <h1>Ing. Adrian Helfer</h1>
+        
+        <div class="contact-info">
+            
+            <p>info@adrianhelfer.com</p>
+            
+            <p>‭+43 1 9530252‬</p>
+            
+            <p>Montags bis Freitags<br/>16:00 - 21:00<br/>und nach Vereinbarung</p>
+        </div>
+        
+    </div>
+
 </body>
 </html>
