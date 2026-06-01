@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modern Gallery</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #f5f7fa;
+  color: #222;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* fade overlay */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center,
+    rgba(255,255,255,0.05) 0%,
+    rgba(255,255,255,0.2) 40%,
+    rgba(255,255,255,0.5) 70%,
+    rgba(255,255,255,0.85) 100%
+  );
+  z-index: 1;
+}
+
+/* ✅ content wrapper for vertical layout */
+.hero-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;   /* vertical stacking */
+  align-items: center;      /* center horizontally */
+  background: rgba(255,255,255,0.9);
+  padding: 18px 26px;
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  text-align: center;
+  z-index: 2;
+}
+
+/* headline */
+.hero h3 {
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+}
+
+/* ✅ borderless text block */
+.hero-text {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #333;
+  max-width: 420px;
+}
+
+/* ---------- SCATTER IMAGES ---------- */
+.scatter {
+  position: absolute;
+  width: 180px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scatter:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+/* positions */
+.scatter:nth-child(2)  { top: 5vh;  left: 5vw; }
+.scatter:nth-child(3)  { top: 10vh; left: 80vw; }
+.scatter:nth-child(4)  { top: 25vh; left: 10vw; }
+.scatter:nth-child(5)  { top: 30vh; left: 85vw; }
+.scatter:nth-child(6)  { top: 65vh; left: 5vw; }
+.scatter:nth-child(7)  { top: 70vh; left: 80vw; }
+.scatter:nth-child(8)  { top: 85vh; left: 15vw; }
+.scatter:nth-child(9)  { top: 85vh; left: 75vw; }
+.scatter:nth-child(10) { top: 2vh;  left: 60vw; }
+.scatter:nth-child(11) { top: 92vh; left: 50vw; }
+
+/* ---------- GALLERY ---------- */
+.gallery {
+  padding: 60px 0;
+  background: #fff;
+}
+
+.panel {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.panel img {
+  width: 260px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.panel img:hover {
+  transform: scale(1.05);
+}
+
+/* ---------- HEADER ---------- */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 30px;
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+header h1 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Workshop - Filmfotografie</h1>
+</header>
+
+<section class="hero">
+
+  <!-- ✅ CENTERED VERTICAL BLOCK -->
+  <div class="hero-content">
+    <h3>Kamerakunde · Betriebstechnik · Komposition</h3>
+    <p class="hero-text">
+      Eigenes Equpiment wird empfohlen. Im Zweifelsfall kann vor Ort Film gekauft werden. Leihgeräte sind in diversen Zuständen vorhanden.
+    </p>
+  </div>
+
+  <img class="scatter" src="https://picsum.photos/id/1015/400/300">
+  <img class="scatter" src="https://picsum.photos/id/1016/400/300">
+  <img class="scatter" src="https://picsum.photos/id/1018/400/300">
+  <img class="scatter" src="https://picsum.photos/id/1020/400/300">
+  <img class="scatter" src="https://picsum.photos/id/1024/400/300">
+  <img class="scatter" src="https://picsum.photos/id/1025/400/300">
+  <img class="scatter" src="https://picsum.photos/id/1033/400/300">
+  <img class="scatter" src="https://picsum.photos/id/1035/400/300">
+  <img class="scatter" src="https://picsum.photos/id/1039/400/300">
+  <img class="scatter" src="https://picsum.photos/id/1043/400/300">
+
+</section>
+
+<section class="gallery">
+  <div class="panel"><img src="https://picsum.photos/id/1015/400/300"></div>
+  <div class="panel"><img src="https://picsum.photos/id/1016/400/300"></div>
+  <div class="panel"><img src="https://picsum.photos/id/1018/400/300"></div>
+  <div class="panel"><img src="https://picsum.photos/id/1020/400/300"></div>
+  <div class="panel"><img src="https://picsum.photos/id/1024/400/300"></div>
+  <div class="panel"><img src="https://picsum.photos/id/1025/400/300"></div>
+  <div class="panel"><img src="https://picsum.photos/id/1033/400/300"></div>
+  <div class="panel"><img src="https://picsum.photos/id/1035/400/300"></div>
+  <div class="panel"><img src="https://picsum.photos/id/1039/400/300"></div>
+  <div class="panel"><img src="https://picsum.photos/id/1043/400/300"></div>
+</section>
+
+</body>
+</html>
